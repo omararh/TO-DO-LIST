@@ -6,14 +6,18 @@ const Form = ({setInputText, setTodos, todos, inputText}) => {
     
     const submitTodoHandler = (e) => { 
         e.preventDefault();
-        setTodos([...todos, {text : inputText, completed : false, id : v4()}])
+        if(inputText === ''){
+            window.alert("your task title can't be empty !");
+            return;
+        }
+        setTodos([...todos, {taskTitle : inputText , taskState : '', color : '', id : v4()}])
         setInputText('');
     }
     return (
         <form>
             <button onClick = {submitTodoHandler} className="todo-button" type="submit">
                      <i className="fas fa-plus-square"></i>
-                </button>
+            </button>
             <input value = {inputText} onChange = {inputTextHandler} type="text" className="toDoinput" placeholder="Ajouter une tache"/>
         </form>
     );

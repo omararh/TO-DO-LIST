@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import '/Users/omararharbi/Desktop/toDoListApp/client/src/app.css';
+import '/Users/omararharbi/Desktop/toDoListApp/client/src/app.scss';
 import Form from './components/form';
 import ToDoList from './components/toDoList';
-//import Search from './components/search';
 
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
     <div className="App">
      <header className = "title" >TO-DO LIST</header>
      <input type="text" className="searchBar" placeholder = "Recherche" onChange = {e => setQuery(e.target.value)}/>
-     <ToDoList todos = {query === '' ? todos : todos.filter(item => item.text.toLowerCase().includes(query.toLowerCase()))}  setTodos = {setTodos}/>
+     <ToDoList todos = {query === '' ? todos : todos.filter(item => item.taskTitle.toLowerCase().includes(query.toLowerCase()))}  setTodos = {setTodos}/>
      <Form  
          inputText = {inputText} 
          todos = {todos} 
