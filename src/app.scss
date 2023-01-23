@@ -1,208 +1,25 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #00BFFF;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    min-height: 100vh;
-}
-
-header {
-    font-size: 3em;
-    font-weight: bolder;
-    color: black;
-    margin: 2em 2em;
-}
-
-header,
-form {
-    min-height: 20vh;
+.App {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
-
-form button {
-    padding: 0.5rem;
-    font-size: 2rem;
-    border: none;
-    background: #ffffff;
-    margin-right: 7em;
-}
-
-form input {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    align-items: center;
-    margin-right: 7em;
-}
-
-@media screen and (max-width: 400px) {
-    form input {
-        width: 60%;
-        margin-left: .1em;
+    .title {
+        color: black;
+        margin: 5%;
+        font-size: 4em;
+        font-weight: bold;
     }
-    form button {
-        font-size: 1.5rem;
-        margin-left: 2.3em;
-    }
-    header {
-        font-size: 1.5em;
-    }
-}
-
-::placeholder {
-    font-size: 12px;
-}
-
-form button {
-    color: grey;
-    background: #00BFFF;
-    cursor: pointer;
-    margin-right: .2em;
-}
-
-form button:hover {
-    background: #ff6f47;
-    color: white;
-}
-
-.todo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.todo-list {
-    min-width: 30%;
-    list-style: none;
-}
-
-.todo {
-    margin: 0.5rem;
-    background: white;
-    font-size: 1.5rem;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.filter-todo {
-    padding: 1rem;
-}
-
-.todo li {
-    flex: 1;
-}
-
-.state {
-    margin-right: 20px;
-}
-
-.trash-btn,
-.complete-btn {
-    background: #ff6f47;
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.complete-btn {
-    background: rgb(11, 212, 162);
-}
-
-.todo-item {
-    padding: 0rem 0.5rem;
-}
-
-.fa-trash,
-.fa-check {
-    pointer-events: none;
-}
-
-.fall {
-    transform: translateY(10rem) rotateZ(20deg);
-    opacity: 0;
-}
-
-.completed {
-    text-decoration: line-through;
-    opacity: 0.5;
-}
-
-
-/*CUSTOM SELECTOR */
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: 0 !important;
-    background-image: none;
-}
-
-
-/* Custom Select */
-
-.select {
-    margin: 1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-select {
-    color: #ff6f47;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    width: 12rem;
-}
-
-
-/* Arrow */
-
-.select::after {
-    content: "\25BC";
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    background: #ff6f47;
-    cursor: pointer;
-    pointer-events: none;
-}
-
-.searchBar {
-    margin-left: 30em;
-    margin-bottom: 2em;
-    width: 45%;
-    padding: 8px 20px;
-}
-
-@media screen and (max-width: 400px) {
     .searchBar {
-        margin-left: 2.5em;
-        width: 80%;
+        width: 60%;
+        height: 4em;
+        border: none;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        outline: none;
+        margin: 1em 5em 2em;
+    }
+    .list-form {
+        display: flex;
+        flex-direction: column;
     }
 }
-
-
-/* Transition */
-
-
-/*
-  .select:hover::after {
-    transform: scale(1.5);
-  }
-  */

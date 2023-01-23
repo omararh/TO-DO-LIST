@@ -1,5 +1,7 @@
 import React from 'react';
 import {v4} from 'uuid';
+import '/Users/omararharbi/Desktop/toDoListApp/client/src/components/form.scss';
+
 
 const Form = ({setInputText, setTodos, todos, inputText}) => {
     const inputTextHandler = (e) => setInputText(e.target.value);
@@ -13,13 +15,18 @@ const Form = ({setInputText, setTodos, todos, inputText}) => {
         setTodos([...todos, {taskTitle : inputText , taskState : '', color : '', id : v4()}])
         setInputText('');
     }
+
+
+    
     return (
-        <form>
-            <button onClick = {submitTodoHandler} className="todo-button" type="submit">
+        <div  className = "form">
+             <form>
+                 <button onClick = {submitTodoHandler} className="todo-button" type="submit">
                      <i className="fas fa-plus-square"></i>
-            </button>
-            <input value = {inputText} onChange = {inputTextHandler} type="text" className="toDoinput" placeholder="Ajouter une tache"/>
-        </form>
+                 </button>
+                 <input value = {inputText} onChange = {inputTextHandler} type="text" className="toDoinput" placeholder="Ajouter une tache"/>
+            </form>
+        </div>
     );
 }
 

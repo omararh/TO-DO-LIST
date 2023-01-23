@@ -1,5 +1,6 @@
 import React from 'react'
 import Select from 'react-select';
+import '/Users/omararharbi/Desktop/toDoListApp/client/src/components/toDo.scss';
 
 const ToDo = ({todo,todos, setTodos}) => {
     const deleteHandler = () => setTodos(todos.filter((el) => el.id !== todo.id));
@@ -19,20 +20,24 @@ const ToDo = ({todo,todos, setTodos}) => {
             return item;
         }))
     }
-      
+
+   
+
     return (
-        <div>
-            <div className="todo">
-                <li className={`todo-item ${todo.text === 'Fait' ? "completed" : ""}` }>{todo.taskTitle}</li>
-                
-                <span style={{color: todo.color}}  className= "state" >{todo.taskState}</span>
-                <Select options={options} defaultValue={options[0]} onChange={handleChange} className = "selector" />
-            
+        <div className = "toDo">
+           <div className = "toDoTable">        
+                <p className= "">{todo.taskTitle}</p>
+                <p style={{color: todo.color}}  className= "state" >{todo.taskState}</p>
+                <div className = "icons">    
+                    <Select options={options} defaultValue={options[0]} onChange={handleChange} className = "selector" />
                     <button onClick = {deleteHandler} className = "trash-btn">
-                        <i className = "fas fa-trash" ></i>
+                    <i className = "fas fa-trash" ></i>
                     </button>
+                </div>
+
             </div>
-            
+
+
         </div>
     )
 }

@@ -10,15 +10,16 @@ function App() {
   const [query, setQuery] = useState(""); 
   return ( 
     <div className="App">
-     <header className = "title" >TO-DO LIST</header>
-     <input type="text" className="searchBar" placeholder = "Recherche" onChange = {e => setQuery(e.target.value)}/>
-     <ToDoList todos = {query === '' ? todos : todos.filter(item => item.taskTitle.toLowerCase().includes(query.toLowerCase()))}  setTodos = {setTodos}/>
-     <Form  
-         inputText = {inputText} 
-         todos = {todos} 
-         setTodos =  {setTodos}
-         setInputText = {setInputText} /> 
-      
+       <header className = "title" >TO-DO LIST</header>
+        <input type="text" className="searchBar" placeholder = "Recherche" onChange = {e => setQuery(e.target.value)}/>
+      <div className = "list-form">
+           <ToDoList todos = {query === '' ? todos : todos.filter(item => item.taskTitle.toLowerCase().includes(query.toLowerCase()))}  setTodos = {setTodos}/>
+           <Form  
+              inputText = {inputText} 
+              todos = {todos} 
+              setTodos =  {setTodos}
+              setInputText = {setInputText} /> 
+      </div>
     </div> 
   );
 }

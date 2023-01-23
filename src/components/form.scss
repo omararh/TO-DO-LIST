@@ -1,0 +1,15 @@
+.form {
+    margin-left: 2.2em;
+    .todo-button {
+        cursor: pointer;
+        border: none;
+        background-color: #87CEEB;
+    }
+    .toDoinput {
+        border: none;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        outline: none;
+    }
+}

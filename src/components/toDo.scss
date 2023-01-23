@@ -1,0 +1,23 @@
+.toDo {
+    .toDoTable {
+        background-color: white;
+        width: 40em;
+        margin-right: 2.2em;
+        display: flex;
+        justify-content: space-around;
+    }
+    .icons {
+        display: flex;
+        .selector {
+            width: 8em;
+            margin-top: .5em;
+            background: white;
+            border: none;
+        }
+        .trash-btn {
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
