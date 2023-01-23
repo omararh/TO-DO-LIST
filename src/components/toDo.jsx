@@ -1,8 +1,9 @@
-import React from 'react'
-import Select from 'react-select';
-import '/Users/omararharbi/Desktop/toDoListApp/client/src/components/toDo.scss';
+import React, {useState} from 'react'
+import './toDo.scss';
 
 const ToDo = ({todo,todos, setTodos}) => {
+    const [index, setIndex] = useState(0);
+
     const deleteHandler = () => setTodos(todos.filter((el) => el.id !== todo.id));
    
     const options = [
@@ -12,32 +13,33 @@ const ToDo = ({todo,todos, setTodos}) => {
         { value: 'late', label: 'En retard',color : 'red' }
       ]
 
-    const handleChange =  (selectedOption) => {
+
+    const handleChange =  () => {
         setTodos(todos.map(item => {
             if(item.id === todo.id) {
-                return {...item, taskState :  selectedOption.label, color : selectedOption.color} 
+                (index + 1 === options.length) ? setIndex(0) : setIndex(index + 1);
+                return {...item, taskState :  options[index + 1 === options.length ? 0 : index + 1].label, color : options[index + 1 === options.length ? 0 : index + 1].color} 
             }    
             return item;
         }))
     }
 
+    console.log(index, "index___");
    
-
     return (
         <div className = "toDo">
            <div className = "toDoTable">        
-                <p className= "">{todo.taskTitle}</p>
-                <p style={{color: todo.color}}  className= "state" >{todo.taskState}</p>
+                <p className= "taskTitle">{todo.taskTitle}</p>
+                <p style={{color: todo.color}}  className= "taskState" >{todo.taskState}</p>
                 <div className = "icons">    
-                    <Select options={options} defaultValue={options[0]} onChange={handleChange} className = "selector" />
+                    <button onClick = {handleChange} className = "updateState-btn">
+                        <i className = "fas fa-trash" ></i>
+                    </button>
                     <button onClick = {deleteHandler} className = "trash-btn">
-                    <i className = "fas fa-trash" ></i>
+                        <i className = "fas fa-trash" ></i>
                     </button>
                 </div>
-
             </div>
-
-
         </div>
     )
 }

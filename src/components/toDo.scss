@@ -6,6 +6,9 @@
         display: flex;
         justify-content: space-around;
     }
+    .taskState {
+        width: 5em;
+    }
     .icons {
         display: flex;
         .selector {
@@ -14,6 +17,7 @@
             background: white;
             border: none;
         }
+        .updateState-btn,
         .trash-btn {
             background-color: white;
             border: none;
