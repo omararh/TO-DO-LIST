@@ -7,8 +7,8 @@ const ToDo = ({todo,todos, setTodos}) => {
     const deleteHandler = () => setTodos(todos.filter((el) => el.id !== todo.id));
    
     const options = [
-        { value: 'toDo', label: 'A faire',color : 'blue' },
-        { value: 'done', label: 'Fait',color : 'green' },
+        { value: 'toDo', label: 'A faire',color : '#AFEEEE' },
+        { value: 'done', label: 'Fait',color : '#90EE90' },
         { value: 'inProgress', label: 'En cours' ,color : '#FFD700'},
         { value: 'late', label: 'En retard',color : 'red' }
       ]
@@ -23,20 +23,18 @@ const ToDo = ({todo,todos, setTodos}) => {
             return item;
         }))
     }
-
-    console.log(index, "index___");
    
     return (
         <div className = "toDo">
            <div className = "toDoTable">        
                 <p className= "taskTitle">{todo.taskTitle}</p>
-                <p style={{color: todo.color}}  className= "taskState" >{todo.taskState}</p>
+                    <p style={{"background-color" : todo.color}}  className= "taskState" >{todo.taskState}</p>
                 <div className = "icons">    
                     <button onClick = {handleChange} className = "updateState-btn">
-                        <i className = "fas fa-trash" ></i>
+                        <i class='fas fa-edit'></i>
                     </button>
                     <button onClick = {deleteHandler} className = "trash-btn">
-                        <i className = "fas fa-trash" ></i>
+                        <span>&#10060;</span>
                     </button>
                 </div>
             </div>

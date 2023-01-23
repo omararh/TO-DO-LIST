@@ -12,7 +12,7 @@ const Form = ({setInputText, setTodos, todos, inputText}) => {
             window.alert("your task title can't be empty !");
             return;
         }
-        setTodos([...todos, {taskTitle : inputText , taskState : 'A faire', color : 'blue', id : v4()}])
+        setTodos([...todos, {taskTitle : inputText , taskState : 'A faire', color : '#AFEEEE', id : v4()}])
         setInputText('');
     }
 
