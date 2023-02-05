@@ -1,6 +1,6 @@
 import React from 'react';
 import {v4} from 'uuid';
-import '/Users/omararharbi/Desktop/toDoListApp/client/src/components/form.scss';
+import '../components/form.scss';
 
 
 const Form = ({setInputText, setTodos, todos, inputText}) => {
@@ -8,7 +8,7 @@ const Form = ({setInputText, setTodos, todos, inputText}) => {
     
     const submitTodoHandler = (e) => { 
         e.preventDefault();
-        if(inputText === ''){
+        if(inputText === '') {
             window.alert("your task title can't be empty !");
             return;
         }

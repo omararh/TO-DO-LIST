@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './toDo.scss';
 
 const ToDo = ({todo,todos, setTodos}) => {
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(1);
 
     const deleteHandler = () => setTodos(todos.filter((el) => el.id !== todo.id));
    
@@ -18,7 +18,7 @@ const ToDo = ({todo,todos, setTodos}) => {
         setTodos(todos.map(item => {
             if(item.id === todo.id) {
                 (index + 1  === options.length) ? setIndex(0) : setIndex(index + 1);
-                return {...item, taskState :  options[index + 1 === options.length ? 0 : index + 1].label, color : options[index + 1 === options.length ? 0 : index + 1].color} 
+                return {...item, taskState :  options[index].label, color : options[index].color} 
             }    
             return item;
         }))
